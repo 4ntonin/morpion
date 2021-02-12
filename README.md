@@ -1,6 +1,6 @@
 # Morpion
 
-Ce fichier est un petit code pour jouer au morpion.
+Ce fichier est un petit code pour jouer au morpion à deux joueurs.
 
 ## Détails
 
@@ -9,4 +9,4 @@ Il contient un historique utilisant le module file.
 
 ## Comment le lancer
 
-Il suffit de lancer le fichier morpion, la partie va commencer d'elle-même.
+Il suffit de lancer le fichier morpion.
