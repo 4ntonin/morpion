@@ -1,12 +1,5 @@
-# Morpion
+# Tic-Tac-Toe
 
-Ce fichier est un petit code pour jouer au morpion à deux joueurs.
+Little 2 players Tic-Tac-Toe.
 
-## Détails
-
-Ce morpion est codé en objet, il ne contient **pas d'interface graphique** est doit donc être joué dans la console python.
-Il contient un historique utilisant le module file.
-
-## Comment le lancer
-
-Il suffit de lancer le fichier morpion.
+Need to be played in console, has an history.
