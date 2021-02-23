@@ -1,6 +1,27 @@
 from queue import Queue
 
 
+class CMove:
+    def __init__(self):
+        self.__line_played = 0
+        self.__column_played = 0
+        self.__active_player = 1
+
+    def set_Move(self, player, line, column):
+        self.__active_player = player
+        self.__line_played = line
+        self.__column_played = column
+
+    def get_player(self):
+        return self.__active_player
+
+    def get_column(self):
+        return self.__column_played
+
+    def get_line(self):
+        return self.__line_played
+
+
 class TicTacToe:
     def __init__(self):
         self.__grid = [['-', '-', '-'],
@@ -44,7 +65,7 @@ class TicTacToe:
         else:
             self.__grid[line - 1][column - 1] = 'O'
         self.__turn += 1
-        Move = Move()
+        Move = CMove()
         Move.set_Move(self.__player, line, column)
         self.__history.queue(Move)
         return True
@@ -65,29 +86,8 @@ class TicTacToe:
 
     def replay(self):
         """replay the game"""
-        actual_move = self.__history.defile()
+        actual_move = self.__history.dequeue()
         self.play(actual_move.get_line(), actual_move.get_column())
-
-
-class Move:
-    def __init__(self):
-        self.__line_played = 0
-        self.__column_played = 0
-        self.__active_player = 1
-
-    def set_Move(self, player, line, column):
-        self.__active_player = player
-        self.__line_played = line
-        self.__column_played = column
-
-    def get_player(self):
-        return self.__active_player
-
-    def get_column(self):
-        return self.__column_played
-
-    def get_line(self):
-        return self.__line_played
 
 
 def show_grid():
@@ -107,7 +107,7 @@ while TicTacToe.get_turn() != 9 and not TicTacToe.end_condition():
 if not TicTacToe.end_condition():
     print("Draw!")
 else:
-    print("Player " + str(TicTacToe.get_player()) + " won !")
+    print("Player " + str(TicTacToe.get_player()) + " won!")
 shistory = str(input("Do you want to look at the history? (yes or no) "))
 total_moves = TicTacToe.get_turn()
 while shistory == "yes":
