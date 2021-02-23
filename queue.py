@@ -8,10 +8,10 @@ class Queue:
         if len(self.__queue) < self.__maxlength:
             return self.__queue.append(element)
         else:
-            return 'la file est pleine'
+            return 'Error. The queue is full.'
 
     def dequeue(self):
         if len(self.__queue) != 0:
             return self.__queue.pop(0)
         else:
-            return 'la file est vide'
+            return 'Error. The queue is empty.'
